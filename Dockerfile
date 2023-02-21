@@ -37,7 +37,7 @@ RUN set -x && apk add --no-cache bash libgcc libstdc++ curl curl-dev coreutils t
   && rm -rf /tmp/* \
   && sed -i "s#/var/log/messages {}.*# #g" /etc/logrotate.conf
 
-ENV S6_ARCH=aarch64
+ENV S6_ARCH=x86_64
 
 # RUN cd /tmp \
 #   && curl -SLO https://github.com/just-containers/s6-overlay/releases/download/v${S6_OVERLAY_VERSION}/s6-overlay-${S6_ARCH}-installer \
@@ -46,8 +46,8 @@ ENV S6_ARCH=aarch64
 ADD https://github.com/just-containers/s6-overlay/releases/download/v3.1.4.0/s6-overlay-noarch.tar.xz /tmp
 RUN tar -C / -Jxpf /tmp/s6-overlay-noarch.tar.xz
 
-ADD https://github.com/just-containers/s6-overlay/releases/download/v3.1.4.0/s6-overlay-aarch64.tar.xz /tmp
-RUN tar -C / -Jxpf /tmp/s6-overlay-aarch64.tar.xz
+ADD https://github.com/just-containers/s6-overlay/releases/download/v3.1.4.0/s6-overlay-${S6_ARCH}.tar.xz /tmp
+RUN tar -C / -Jxpf /tmp/s6-overlay-${S6_ARCH}.tar.xz
 
 # RUN set -x && curl -fLO https://github.com/oznu/alpine-node/releases/download/${NODE_VERSION}/node-v${NODE_VERSION}-linux-${S6_ARCH}-alpine.tar.gz \
 #   && tar -xzf node-v${NODE_VERSION}-linux-${S6_ARCH}-alpine.tar.gz -C /usr --strip-components=1 --no-same-owner \
