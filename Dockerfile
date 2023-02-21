@@ -15,10 +15,10 @@ RUN set -x && apk add --no-cache bash libgcc libstdc++ curl curl-dev coreutils t
   && sed -i "s#/var/log/messages {}.*# #g" /etc/logrotate.conf
 
 
-ADD https://github.com/just-containers/s6-overlay/releases/download/v3.1.4.0/s6-overlay-noarch.tar.xz /tmp
+ADD https://github.com/just-containers/s6-overlay/releases/download/v${S6_OVERLAY_VERSION}/s6-overlay-noarch.tar.xz /tmp
 RUN tar -C / -Jxpf /tmp/s6-overlay-noarch.tar.xz
 
-ADD https://github.com/just-containers/s6-overlay/releases/download/v3.1.4.0/s6-overlay-${S6_ARCH}.tar.xz /tmp
+ADD https://github.com/just-containers/s6-overlay/releases/download/v${S6_OVERLAY_VERSION}/s6-overlay-${S6_ARCH}.tar.xz /tmp
 RUN tar -C / -Jxpf /tmp/s6-overlay-${S6_ARCH}.tar.xz
 
 RUN apk add --no-cache jq curl bind-tools
