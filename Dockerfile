@@ -4,7 +4,7 @@ ENV S6_OVERLAY_VERSION=3.1.4.0
 ENV S6_CMD_WAIT_FOR_SERVICES_MAXTIME=0
 # ENV S6_ARCH=x86_64
 ENV S6_ARCH=aarch64
-
+ENV SOMETHING="nothing"
 RUN set -x && apk add --no-cache bash libgcc libstdc++ curl curl-dev coreutils tzdata shadow libstdc++ logrotate py3-pip \
   && groupmod -g 911 users \
   && useradd -u 911 -U -d /config -s /bin/false abc \
