@@ -5,12 +5,12 @@ ENV S6_CMD_WAIT_FOR_SERVICES_MAXTIME=0
 # ENV S6_ARCH=x86_64
 ENV S6_ARCH=aarch64
 
-RUN apk add --no-cache bash libgcc libstdc++ curl curl-dev coreutils tzdata shadow libstdc++ logrotate py3-pip \
+RUN apk add --no-cache bash libgcc libstdc++ curl curl-dev coreutils tzdata shadow libstdc++ logrotate pipx \
   && groupmod -g 1000 users \
   && useradd -u 1000 -U -d /config -s /bin/false abc \
   && usermod -G users abc \
   && mkdir -p /app /config /defaults \
-  && pip3 install tzupdate \
+  && pipx install tzupdate \
   && apk del --purge \
   && rm -rf /tmp/* \
   && sed -i "s#/var/log/messages {}.*# #g" /etc/logrotate.conf
