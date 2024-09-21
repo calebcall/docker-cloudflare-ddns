@@ -1,4 +1,4 @@
-[![Travis](https://img.shields.io/travis/oznu/docker-cloudflare-ddns.svg)](https://travis-ci.org/oznu/docker-cloudflare-ddns) [![Docker Pulls](https://img.shields.io/docker/pulls/oznu/cloudflare-ddns.svg)](https://hub.docker.com/r/oznu/cloudflare-ddns/)
+
 
 # Docker CloudFlare DDNS
 
