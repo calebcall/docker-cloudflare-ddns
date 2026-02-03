@@ -5,7 +5,6 @@
 This small Alpine Linux based Docker image will allow you to use the free [CloudFlare DNS Service](https://www.cloudflare.com/dns/) as a Dynamic DNS Provider ([DDNS](https://en.wikipedia.org/wiki/Dynamic_DNS)).
 
 This image will run on x86_64.
-
 ## Usage
 
 Quick Setup:
