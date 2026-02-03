@@ -2,8 +2,8 @@ FROM alpine:latest
 
 ENV S6_OVERLAY_VERSION=3.2.0.0
 ENV S6_CMD_WAIT_FOR_SERVICES_MAXTIME=0
-# ENV S6_ARCH=x86_64
-ENV S6_ARCH=aarch64
+ENV S6_ARCH=x86_64
+#ENV S6_ARCH=aarch64
 
 RUN apk add --no-cache bash libgcc libstdc++ curl curl-dev coreutils tzdata shadow libstdc++ logrotate pipx \
   && groupmod -g 1000 users \
